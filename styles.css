@@ -1,0 +1,327 @@
+/* Estilos Generales */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Life+Savers:wght@400;700;800&family=Playwrite+BE+VLG:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f1; /* Fondo pastel claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background:linear-gradient(#40b0ae, #89356e);
+    color: #fff;
+    padding: 10px 0;
+    position: relative; /* Necesario para el menú hamburguesa */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 90px; /* Ajusta el tamaño del logo */
+    border-radius: 50%;
+    border: solid blueviolet;
+}
+
+.navbar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.avatar-container {
+    display: none; /* Oculto por defecto */
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+.menu{
+    width: 24px;
+    display: none;
+    
+}
+.cart{
+    width: 30px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #f7b7a3;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    .avatar-container {
+        display: block; /* Mostrar avatar en móviles */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Contenedor principal para la imagen de portada */
+.hero {
+    width: 100%;
+    height: 100vh; /* La imagen ocupará el 100% de la altura de la ventana */
+    background: url('https://reoobot.github.io/MarianyiFotos/13.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 4rem;
+}
+
+/* Estilo opcional para un título o texto superpuesto */
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 6px 8px #ffd700; /* Sombra para que el texto sea legible */
+}
+
+/* Estilo para texto adicional debajo del título */
+.hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px #ffd700;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+}
+aside{
+    padding: 20px;
+    flex: 1; /* Permitir que main ocupe el espacio disponible */
+}
+
+/* Estilos para el contenedor de productos */
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilos para cada tarjeta de producto */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(50% - 20px);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.add-to-cart {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart:hover {
+    background-color: #e74c3c;
+}
+
+/* Estilos para el formulario de login */
+#loginForm {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#loginForm button {
+    width: 100%;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+    background-color: #e74c3c;
+}
+
+.form-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-links a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+.cart-product-image {
+    width: 100px; 
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+.c {
+    margin: 0;
+    font-size: 2rm;
+}
+
+main{
+    margin: 0 auto;
+}
+
+.cart-item {
+   
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 10px auto;
+    box-shadow: 1px 1px 2px 0px gainsboro;
+}
+.nav_car{
+    color: #e74c3c;
+    border: solid;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #fff;
+    background-color: #ff6f61;
+    text-decoration: none;
+}
+.footer_ico{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+}
+.whatsapp{
+    width: 50px;
+    position: absolute;
+}
+.copy{
+    margin-top: 70px;
+    text-align: center;
+    padding: 5px;
+    background-color: #f7b7a3;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Media Queries para diseño responsivo */
+@media (min-width: 768px) {
+    #products .product {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    #products .product {
+        width: calc(25% - 20px);
+    }
+}
